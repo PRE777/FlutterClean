@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "new_page": (context) => NewRoute(),
         "routerTest_page": (context) => RouterTestRoute(),
-        "tipRoute_page": (context) => TipRoute(),
+        "tipRoute_page": (context) => TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
       },
     );
@@ -127,7 +127,7 @@ class RouterTestRoute extends StatelessWidget {
             onPressed: () async {
               // var result = await Navigator.of(context).pushNamed("tipRoute_page", arguments:"我是传过来的参数");
               var result = await Navigator.pushNamed(context,"tipRoute_page", arguments:"我是传过来的参数");
-
+              // 路由跳转并传参 
               // var result = await Navigator.push(context,
               //     MaterialPageRoute(builder: (context) {
               //   return TipRoute(
@@ -144,14 +144,12 @@ class RouterTestRoute extends StatelessWidget {
 }
 
 class TipRoute extends StatelessWidget {
-  // TipRoute({Key key, @required this.text // 接收一个text参数
-  //     })
-  //     : super(key: key);
-  // final String text;
+  TipRoute({Key key, @required this.text // 接收一个text参数
+      })
+      : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
-    // 获取出过来的参数
-    var text=ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text("TipRoute"),
