@@ -13,7 +13,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       //应用首页路由
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // 注册路由表
+      routes: {
+        "new_page": (context) => NewRoute(),
+        "routerTest_page": (context) => RouterTestRoute(),
+        "tipRoute_page": (context) => TipRoute(),
+        "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
+      },
     );
   }
 }
@@ -32,27 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         // title: Text(widget.title),
       ),
@@ -75,20 +69,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               textColor: Colors.red,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return NewRoute();
-                  },
-                ));
+                Navigator.pushNamed(context, "new_page");
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) {
+                //     return NewRoute();
+                //   },
+                // ));
               },
             ),
             FlatButton(
               child: Text("RouterTestRoute"),
               textColor: Colors.green,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return RouterTestRoute();
-                }));
+                Navigator.pushNamed(context, "routerTest_page");
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return RouterTestRoute();
+                // }));
               },
             ),
           ],
@@ -98,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
@@ -108,8 +104,6 @@ class NewRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text("New route"),
         // title: Text(widget.title),
       ),
@@ -131,12 +125,16 @@ class RouterTestRoute extends StatelessWidget {
         body: Center(
           child: RaisedButton(
             onPressed: () async {
-              var result = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) {
-                return TipRoute(
-                  text: "我是传过来的参数",
-                );
-              }));
+              // var result = await Navigator.of(context).pushNamed("tipRoute_page", arguments:"我是传过来的参数");
+              var result = await Navigator.pushNamed(context,"tipRoute_page", arguments:"我是传过来的参数");
+
+              // var result = await Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) {
+              //   return TipRoute(
+              //     text: "我是传过来的参数",
+              //   );
+              // }));
+
               print("路由返回值：$result");
             },
             child: Text("打开提示页"),
@@ -146,13 +144,14 @@ class RouterTestRoute extends StatelessWidget {
 }
 
 class TipRoute extends StatelessWidget {
-  TipRoute({Key key, @required this.text // 接收一个text参数
-      })
-      : super(key: key);
-  final String text;
-
+  // TipRoute({Key key, @required this.text // 接收一个text参数
+  //     })
+  //     : super(key: key);
+  // final String text;
   @override
   Widget build(BuildContext context) {
+    // 获取出过来的参数
+    var text=ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text("TipRoute"),
