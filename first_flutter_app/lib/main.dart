@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart'; //导入Material UI组件库
+import 'package:english_words/english_words.dart';
 
 import 'routerTest.dart';
-
+import 'newRoute.dart';
+import 'english_word_test.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -92,6 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 // }));
               },
             ),
+            RandomWordsWidget(),
+
           ],
         ),
       ),
@@ -104,17 +108,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class NewRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("New route"),
-        // title: Text(widget.title),
-      ),
-      body: Center(
-        child: Text("This is new route"),
-      ),
-    );
-  }
-}
+
