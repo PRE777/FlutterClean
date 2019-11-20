@@ -6,6 +6,7 @@ import 'newRoute.dart';
 import 'english_word_test.dart';
 import 'show_snackBar.dart';
 import 'activeMangerByParent.dart';
+import 'customButton.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "routerTest_page": (context) => RouterTestRoute(),
         "show_snackBar":(context) => MyStateTestPage() ,
         "activeMangerByParent":(context) => ParentMangerTest(),
+        "customButton":(context) => CustomButton(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
@@ -113,7 +115,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "activeMangerByParent");
               },
             ),
+            // 生成随机英文字符串
             RandomWordsWidget(),
+            OutlineButton(
+              child: Text("自定义button"),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "customButton");
+              },
+            ),
+
+
 
           ],
         ),
