@@ -7,6 +7,7 @@ import 'english_word_test.dart';
 import 'show_snackBar.dart';
 import 'activeMangerByParent.dart';
 import 'customButton.dart';
+import 'imageTest.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         "show_snackBar":(context) => MyStateTestPage() ,
         "activeMangerByParent":(context) => ParentMangerTest(),
         "customButton":(context) => CustomButton(),
+        "imageTest":(context) => ImageTestDart(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
@@ -124,9 +126,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "customButton");
               },
             ),
-
-
-
+            RaisedButton(
+              color: Colors.green,
+              textColor: Colors.white,
+              child: Text("加载image"),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: (){
+                Navigator.pushNamed(context, "imageTest");
+              },
+            ),
           ],
         ),
       ),
