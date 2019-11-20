@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart'; //导入Material UI组件库
-import 'package:english_words/english_words.dart';
+// import 'package:english_words/english_words.dart';
 
 import 'routerTest.dart';
 import 'newRoute.dart';
 import 'english_word_test.dart';
+import 'show_snackBar.dart';
+import 'activeMangerByParent.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "new_page": (context) => NewRoute(),
         "routerTest_page": (context) => RouterTestRoute(),
+        "show_snackBar":(context) => MyStateTestPage() ,
+        "activeMangerByParent":(context) => ParentMangerTest(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
@@ -63,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
             Text(
               'You have pushed the button this many times:',
             ),
@@ -92,6 +97,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) {
                 //   return RouterTestRoute();
                 // }));
+              },
+            ),
+            RaisedButton(
+              child: Text("StateTest"),
+              textColor: Colors.green,
+              onPressed: () {
+                Navigator.pushNamed(context, "show_snackBar");
+              },
+            ),
+            RaisedButton(
+              child: Text("父类管理状态"),
+              textColor: Colors.red,
+              onPressed: () {
+                Navigator.pushNamed(context, "activeMangerByParent");
               },
             ),
             RandomWordsWidget(),
