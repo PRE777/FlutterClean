@@ -35,6 +35,27 @@ class ElementTextContent extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, "swicthAndCheckbox");
                     },
+                  ),
+                  // textFieldForm
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("输入框"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "textFieldTest");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("表单"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "textFieldForm");
+                    },
                   )
                 ],
               ),

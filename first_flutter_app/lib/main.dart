@@ -10,6 +10,8 @@ import 'customButton.dart';
 import 'imageTest.dart';
 import 'elementTest.dart';
 import 'elements/switchAndCheckbox.dart';
+import 'elements/textFieldTest.dart';
+import 'elements/textFieldForm.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -20,21 +22,28 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo', //应用名称
       theme: ThemeData(
         // 这是应用程序的主题
-        primarySwatch: Colors.green,
+        brightness: Brightness.light,
+        // primaryColor: Colors.black,// 主题颜色primaryColor 优先级高于主题样本primarySwatch
+        primarySwatch: Colors.teal,
+        // hintColor: Colors.red,
+    
+        // hintColor: Colors.blue,
       ),
-  
+
       //应用首页路由
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 注册路由表
       routes: {
         "new_page": (context) => NewRoute(),
         "routerTest_page": (context) => RouterTestRoute(),
-        "show_snackBar":(context) => MyStateTestPage() ,
-        "activeMangerByParent":(context) => ParentMangerTest(),
-        "customButton":(context) => CustomButton(),
-        "imageTest":(context) => ImageTestDart(),
-        "elementTest":(context) => ElementTest(),
-        "swicthAndCheckbox":(context) => SwicthAndCheckbox(),
+        "show_snackBar": (context) => MyStateTestPage(),
+        "activeMangerByParent": (context) => ParentMangerTest(),
+        "customButton": (context) => CustomButton(),
+        "imageTest": (context) => ImageTestDart(),
+        "elementTest": (context) => ElementTest(),
+        "swicthAndCheckbox": (context) => SwicthAndCheckbox(),
+        "textFieldTest": (context) => TextFieldTest(),
+        "textFieldForm":(context) => TextFieldForm(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
@@ -75,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             Text(
               'You have pushed the button this many times:',
             ),
@@ -126,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
             OutlineButton(
               child: Text("自定义button"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "customButton");
               },
             ),
@@ -134,8 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.green,
               textColor: Colors.white,
               child: Text("加载image"),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              onPressed: (){
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              onPressed: () {
                 Navigator.pushNamed(context, "imageTest");
               },
             ),
@@ -143,8 +152,9 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.green,
               textColor: Colors.white,
               child: Text("部分控件在这里找"),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              onPressed: (){
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              onPressed: () {
                 Navigator.pushNamed(context, "elementTest");
               },
             ),
@@ -159,5 +169,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
