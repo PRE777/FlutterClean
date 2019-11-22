@@ -76,7 +76,7 @@ class TextFieldDemoState extends State<TextFieldDemo> {
                     prefixIcon: Icon(Icons.lock),
                     enabled: true, // 禁用状态
                   ),
-                  obscureText: true,
+                  obscureText: true,// 密码不可见
                   onSubmitted: (v) {
                     print("密码为：$v");
                   },
