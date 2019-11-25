@@ -56,7 +56,37 @@ class ElementTextContent extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, "textFieldForm");
                     },
-                  )
+                  ),
+                   RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("线性布局"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "linearLayout");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("特殊线性布局"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "specialLinearLayoutRoute");
+                    },
+                  ),
+                   RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("弹性线性布局"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "flexLayoutRoute");
+                    },
+                  ),
                 ],
               ),
             ),

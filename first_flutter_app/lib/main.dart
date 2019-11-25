@@ -12,6 +12,8 @@ import 'elementTest.dart';
 import 'elements/switchAndCheckbox.dart';
 import 'elements/textFieldTest.dart';
 import 'elements/textFieldForm.dart';
+import 'elements/linearLayout.dart';
+import 'elements/flexLayoutRoute.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -44,6 +46,9 @@ class MyApp extends StatelessWidget {
         "swicthAndCheckbox": (context) => SwicthAndCheckbox(),
         "textFieldTest": (context) => TextFieldTest(),
         "textFieldForm":(context) => TextFieldForm(),
+        "linearLayout":(context) => LinearLayout(),
+        "flexLayoutRoute":(context) => FlexLayoutTestRoute(),
+        "specialLinearLayoutRoute":(context) => SpecialLinearLayoutRoute(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由

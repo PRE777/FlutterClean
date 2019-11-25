@@ -21,6 +21,7 @@ class NewRoute extends StatelessWidget {
                 fontFamily: "Courier",
               ),
             ),
+            // 富文本
             Text.rich(TextSpan(children: [
               TextSpan(
                   text: "Home: ",
