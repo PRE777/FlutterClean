@@ -51,7 +51,7 @@ class _FlexLayoutRoute extends StatelessWidget {
                   flex: 2,
                   child: Container(
                     color: Colors.red,
-                    height: 30.0,
+                    // height: 30.0,
                   ),
                 ),
                 Spacer(
@@ -60,7 +60,7 @@ class _FlexLayoutRoute extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    height: 30.0,
+                    // height: 30.0,
                     color: Colors.yellow,
                   ),
                 )
