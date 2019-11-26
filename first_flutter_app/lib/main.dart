@@ -12,8 +12,18 @@ import 'elementTest.dart';
 import 'elements/switchAndCheckbox.dart';
 import 'elements/textFieldTest.dart';
 import 'elements/textFieldForm.dart';
+
+// 布局类组件
 import 'elements/linearLayout.dart';
 import 'elements/flexLayoutRoute.dart';
+import 'elements/wrapFlowLayout.dart';
+import 'elements/stackPositionRouter.dart';
+import 'elements/alignLayout.dart';
+
+// 容器类组件
+import 'containerWidget/containerEntrance.dart';
+import 'containerWidget/elements/paddingContrainer.dart';
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -28,7 +38,7 @@ class MyApp extends StatelessWidget {
         // primaryColor: Colors.black,// 主题颜色primaryColor 优先级高于主题样本primarySwatch
         primarySwatch: Colors.teal,
         // hintColor: Colors.red,
-    
+
         // hintColor: Colors.blue,
       ),
 
@@ -36,6 +46,8 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 注册路由表
       routes: {
+        "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
+
         "new_page": (context) => NewRoute(),
         "routerTest_page": (context) => RouterTestRoute(),
         "show_snackBar": (context) => MyStateTestPage(),
@@ -45,13 +57,19 @@ class MyApp extends StatelessWidget {
         "elementTest": (context) => ElementTest(),
         "swicthAndCheckbox": (context) => SwicthAndCheckbox(),
         "textFieldTest": (context) => TextFieldTest(),
-        "textFieldForm":(context) => TextFieldForm(),
-        "linearLayout":(context) => LinearLayout(),
-        "flexLayoutRoute":(context) => FlexLayoutTestRoute(),
-        "specialLinearLayoutRoute":(context) => SpecialLinearLayoutRoute(),
+        "textFieldForm": (context) => TextFieldForm(),
+        "linearLayout": (context) => LinearLayout(),
+        "flexLayoutRoute": (context) => FlexLayoutTestRoute(),
+        "wrapFlowLayout": (context) => WrapFlowLayoutTestRoute(),
+        "specialLinearLayoutRoute": (context) => SpecialLinearLayoutRoute(),
+        "stackPositionTestRoute": (context) => StackPositionTestRoute(),
+        "alignLayoutTestRoute": (context) => AlignLayoutTestRoute(),
         "tipRoute_page": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
-        "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
+
+        // 容器类组件
+        "containerEntrance":(context) => ContainerTestListRoute(),
+        "paddingContrainer":(context) => PaddingTestRoute(),
       },
     );
     return materialApp;
