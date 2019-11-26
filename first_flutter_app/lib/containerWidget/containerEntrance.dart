@@ -39,6 +39,17 @@ class ContainerListRoute extends StatelessWidget {
               Navigator.pushNamed(context, "paddingContrainer");
             },
           ),
+           RaisedButton(
+            child: Text("constrainedBox 尺寸限制"),
+            textColor: Colors.white,
+            color: Colors.blue[600],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            onPressed: (){
+              Navigator.pushNamed(context, "constrainedBox");
+            },
+          ),
         ],
       ),
     );

@@ -23,7 +23,7 @@ import 'elements/alignLayout.dart';
 // 容器类组件
 import 'containerWidget/containerEntrance.dart';
 import 'containerWidget/elements/paddingContrainer.dart';
-
+import 'containerWidget/elements/constrainedBox.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
 
         // hintColor: Colors.blue,
       ),
-
       //应用首页路由
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 注册路由表
@@ -70,6 +69,8 @@ class MyApp extends StatelessWidget {
         // 容器类组件
         "containerEntrance":(context) => ContainerTestListRoute(),
         "paddingContrainer":(context) => PaddingTestRoute(),
+        "constrainedBox":(context) => ConstrainedBoxTestRoute(),
+        
       },
     );
     return materialApp;
@@ -101,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         // title: Text(widget.title),
       ),
+    
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
