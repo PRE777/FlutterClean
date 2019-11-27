@@ -27,7 +27,7 @@ import 'containerWidget/elements/constrainedBox.dart';
 import 'containerWidget/elements/transform.dart';
 import 'containerWidget/elements/container.dart';
 import 'containerWidget/elements/scaffold.dart';
-
+import 'containerWidget/elements/clip.dart';
 
 
 void main() => runApp(MyApp()); // 应用入口
@@ -78,6 +78,7 @@ class MyApp extends StatelessWidget {
         "constrainedBox":(context) => ConstrainedBoxTestRoute(),
         "transformTestRoute":(context) => TransformTestRoute(),
         "containerTestRoute":(context) => ContainerTestRoute(),
+        "clipTestRoute":(context)=>ClipTestRoute(),
         "scaffold":(context) => ScaffoldRoute(),
       },
     );

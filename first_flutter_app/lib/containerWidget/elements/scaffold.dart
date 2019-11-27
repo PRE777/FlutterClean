@@ -93,6 +93,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((e) {
+          // 创建3个tab页
           return Container(
             alignment: Alignment.center,
             child: Text(e, textScaleFactor: 4),

@@ -82,7 +82,19 @@ class ContainerListRoute extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, "scaffold");
             },
+          ), 
+          RaisedButton(
+            child: Text("裁剪 Clip"),
+            textColor: Colors.white,
+            color: Colors.blue[600],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, "clipTestRoute");
+            },
           ),
+          
         ],
       ),
     );
