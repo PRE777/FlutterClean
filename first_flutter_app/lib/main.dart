@@ -24,6 +24,12 @@ import 'elements/alignLayout.dart';
 import 'containerWidget/containerEntrance.dart';
 import 'containerWidget/elements/paddingContrainer.dart';
 import 'containerWidget/elements/constrainedBox.dart';
+import 'containerWidget/elements/transform.dart';
+import 'containerWidget/elements/container.dart';
+import 'containerWidget/elements/scaffold.dart';
+
+
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -70,7 +76,9 @@ class MyApp extends StatelessWidget {
         "containerEntrance":(context) => ContainerTestListRoute(),
         "paddingContrainer":(context) => PaddingTestRoute(),
         "constrainedBox":(context) => ConstrainedBoxTestRoute(),
-        
+        "transformTestRoute":(context) => TransformTestRoute(),
+        "containerTestRoute":(context) => ContainerTestRoute(),
+        "scaffold":(context) => ScaffoldRoute(),
       },
     );
     return materialApp;
