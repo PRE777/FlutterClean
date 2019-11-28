@@ -29,6 +29,9 @@ import 'containerWidget/elements/container.dart';
 import 'containerWidget/elements/scaffold.dart';
 import 'containerWidget/elements/clip.dart';
 
+// 可滚动组件
+import 'scrollWidget/scrollEntrance.dart';
+import 'scrollWidget/widgets/singleChildScrollView.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -73,13 +76,17 @@ class MyApp extends StatelessWidget {
             TipRoute(text: ModalRoute.of(context).settings.arguments),
 
         // 容器类组件
-        "containerEntrance":(context) => ContainerTestListRoute(),
-        "paddingContrainer":(context) => PaddingTestRoute(),
-        "constrainedBox":(context) => ConstrainedBoxTestRoute(),
-        "transformTestRoute":(context) => TransformTestRoute(),
-        "containerTestRoute":(context) => ContainerTestRoute(),
-        "clipTestRoute":(context)=>ClipTestRoute(),
-        "scaffold":(context) => ScaffoldRoute(),
+        "containerEntrance": (context) => ContainerTestListRoute(),
+        "paddingContrainer": (context) => PaddingTestRoute(),
+        "constrainedBox": (context) => ConstrainedBoxTestRoute(),
+        "transformTestRoute": (context) => TransformTestRoute(),
+        "containerTestRoute": (context) => ContainerTestRoute(),
+        "clipTestRoute": (context) => ClipTestRoute(),
+        "scaffold": (context) => ScaffoldRoute(),
+
+        // 可滚动组件
+        "scrollWidget": (context) => ScrollWidget(),
+        "singleChildScrollView": (context) => SingleChildScrollTestRoute(),
       },
     );
     return materialApp;
@@ -111,7 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         // title: Text(widget.title),
       ),
-    
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

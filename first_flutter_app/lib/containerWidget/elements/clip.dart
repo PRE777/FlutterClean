@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+// 剪裁是在layout完成后的绘制阶段进行的，所以不会影响组件的大小
 class ClipTestRoute extends StatelessWidget {
-  Widget avatar = Image.asset("images/gril.png", width: 80, height: 80);
   @override
   Widget build(BuildContext context) {
+    Widget avatar = Image.asset("images/gril.png", width: 80, height: 80);
     return Scaffold(
       appBar: AppBar(
         title: Text("Clip 剪切"),
