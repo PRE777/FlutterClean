@@ -29,6 +29,17 @@ class ScrollWidget extends StatelessWidget {
                         Navigator.pushNamed(context, "singleChildScrollView");
                       },
                     ),
+                    RaisedButton(
+                      child: Text("ListView"),
+                      textColor: Colors.white70,
+                      color: Colors.blue[400],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "listView");
+                      },
+                    ),
                   ],
                 ),
               ),

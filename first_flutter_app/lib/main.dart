@@ -32,7 +32,7 @@ import 'containerWidget/elements/clip.dart';
 // 可滚动组件
 import 'scrollWidget/scrollEntrance.dart';
 import 'scrollWidget/widgets/singleChildScrollView.dart';
-
+import 'scrollWidget/widgets/listView.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -87,6 +87,7 @@ class MyApp extends StatelessWidget {
         // 可滚动组件
         "scrollWidget": (context) => ScrollWidget(),
         "singleChildScrollView": (context) => SingleChildScrollTestRoute(),
+        "listView": (context) => ListViewTestRoute(),
       },
     );
     return materialApp;
