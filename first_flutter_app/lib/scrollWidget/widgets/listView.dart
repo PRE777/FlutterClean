@@ -33,6 +33,13 @@ class ListViewTestRoute extends StatelessWidget {
                 child: InfiniteListView(),
               ),
             ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.grey[300],
+                child: ListView3(),
+              ),
+            )
           ],
         ),
         // child: ListView1(),
@@ -46,10 +53,15 @@ class ListView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 50,
+      reverse: false,
       itemExtent: 30, // 强制高度
       // 列表构造器
       itemBuilder: (BuildContext context, int index) {
-        return ListTile(title: Text("$index"));
+        return ListTile(
+            title: Text(
+          "$index",
+          textScaleFactor: 2.0,
+        ));
       },
     );
   }
@@ -74,6 +86,7 @@ class ListView2 extends StatelessWidget {
   }
 }
 
+// 加载
 class InfiniteListView extends StatefulWidget {
   @override
   _InfiniteListViewState createState() => new _InfiniteListViewState();
@@ -94,6 +107,7 @@ class _InfiniteListViewState extends State<InfiniteListView> {
     return ListView.separated(
       itemCount: _words.length,
       itemBuilder: (context, index) {
+        print(index);
         //如果到了表尾
         if (_words[index] == loadingTag) {
           //不足100条，继续获取数据
@@ -105,19 +119,21 @@ class _InfiniteListViewState extends State<InfiniteListView> {
               padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
               child: SizedBox(
-                  width: 24.0,
-                  height: 24.0,
-                  child: CircularProgressIndicator(strokeWidth: 2.0)),
+                width: 24.0,
+                height: 24.0,
+                child: CircularProgressIndicator(strokeWidth: 2.0),
+              ),
             );
           } else {
             //已经加载了100条数据，不再获取数据。
             return Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  "没有更多了",
-                  style: TextStyle(color: Colors.grey),
-                ));
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "没有更多了",
+                style: TextStyle(color: Colors.grey),
+              ),
+            );
           }
         }
         //显示单词列表项
@@ -130,12 +146,47 @@ class _InfiniteListViewState extends State<InfiniteListView> {
   void _retrieveData() {
     Future.delayed(Duration(seconds: 2)).then((e) {
       _words.insertAll(
-          _words.length - 1,
-          //每次生成20个单词
-          generateWordPairs().take(20).map((e) => e.asPascalCase).toList());
+        _words.length - 1,
+        //每次生成20个单词
+        generateWordPairs()
+            .take(20)
+            .map(
+              (e) => e.asLowerCase,
+            )
+            .toList(),
+      );
       setState(() {
         //重新构建列表
       });
     });
+  }
+}
+
+// 添加表头
+class ListView3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          title: Text("表头"),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: 50,
+            itemExtent: 30,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(
+                  "$index",
+                  style: TextStyle(color: Colors.red),
+                  textScaleFactor: 2.0,
+                ),
+              );
+            },
+          ),
+        )
+      ],
+    );
   }
 }

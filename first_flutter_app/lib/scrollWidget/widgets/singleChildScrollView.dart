@@ -14,6 +14,7 @@ class SingleChildScrollTestRoute extends StatelessWidget {
       ),
       body: Scrollbar(
         child: SingleChildScrollView(
+          reverse: false,
           padding: EdgeInsets.all(10.0),
           child: Center(
             child: Column(

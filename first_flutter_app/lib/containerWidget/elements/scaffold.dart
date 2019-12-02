@@ -29,7 +29,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
           IconButton(
             icon: Icon(Icons.share),
             onPressed: () => {
-              Navigator.pop(context),
+              Navigator.pop(context,""),
             },
           ),
           IconButton(
