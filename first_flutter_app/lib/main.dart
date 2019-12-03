@@ -33,6 +33,11 @@ import 'containerWidget/elements/clip.dart';
 import 'scrollWidget/scrollEntrance.dart';
 import 'scrollWidget/widgets/singleChildScrollView.dart';
 import 'scrollWidget/widgets/listView.dart';
+import 'scrollWidget/widgets/gridView.dart';
+import 'scrollWidget/widgets/gridView1.dart';
+
+
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -88,6 +93,8 @@ class MyApp extends StatelessWidget {
         "scrollWidget": (context) => ScrollWidget(),
         "singleChildScrollView": (context) => SingleChildScrollTestRoute(),
         "listView": (context) => ListViewTestRoute(),
+        "gridView":(context) => GridViewTestRoute(),
+        "gridView1":(context) => DynamicGridViewTestRoute(),
       },
     );
     return materialApp;
