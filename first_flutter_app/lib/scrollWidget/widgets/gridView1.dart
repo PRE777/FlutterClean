@@ -6,6 +6,13 @@ class DynamicGridViewTestRoute extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("动态创建GridView"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.cyan, Colors.blue, Colors.blueAccent],
+            ),
+          ),
+        ),
       ),
       body: Flex(
         direction: Axis.vertical,

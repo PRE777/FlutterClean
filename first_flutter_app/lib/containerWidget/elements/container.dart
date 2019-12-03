@@ -17,10 +17,11 @@ class ContainerTestRoute extends StatelessWidget {
               height: 100,
               decoration: BoxDecoration(
                 gradient: RadialGradient(
-                    //背景径向渐变
-                    colors: [Colors.red, Colors.orange],
-                    center: Alignment.topLeft,
-                    radius: 0.95),
+                  //背景径向渐变
+                  colors: [Colors.red, Colors.orange],
+                  center: Alignment.topLeft,//渐变方向，从左上角开始渐变
+                  radius: 0.95,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black54,

@@ -62,6 +62,17 @@ class ScrollWidget extends StatelessWidget {
                         Navigator.pushNamed(context, "gridView1");
                       },
                     ),
+                    RaisedButton(
+                      child: Text("GridView 动态"),
+                      textColor: Colors.white70,
+                      color: Colors.blue[400],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "customScrollView");
+                      },
+                    ),
                   ],
                 ),
               ),

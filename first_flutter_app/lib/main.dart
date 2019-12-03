@@ -35,6 +35,7 @@ import 'scrollWidget/widgets/singleChildScrollView.dart';
 import 'scrollWidget/widgets/listView.dart';
 import 'scrollWidget/widgets/gridView.dart';
 import 'scrollWidget/widgets/gridView1.dart';
+import 'scrollWidget/widgets/sliverScrollView.dart';
 
 
 
@@ -95,6 +96,7 @@ class MyApp extends StatelessWidget {
         "listView": (context) => ListViewTestRoute(),
         "gridView":(context) => GridViewTestRoute(),
         "gridView1":(context) => DynamicGridViewTestRoute(),
+        "customScrollView":(context) => CustomScrollViewTestRoute(),
       },
     );
     return materialApp;
