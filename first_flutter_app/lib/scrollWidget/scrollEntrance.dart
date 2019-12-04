@@ -63,7 +63,7 @@ class ScrollWidget extends StatelessWidget {
                       },
                     ),
                     RaisedButton(
-                      child: Text("GridView 动态"),
+                      child: Text("CustomScrollView"),
                       textColor: Colors.white70,
                       color: Colors.blue[400],
                       shape: RoundedRectangleBorder(
@@ -71,6 +71,28 @@ class ScrollWidget extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.pushNamed(context, "customScrollView");
+                      },
+                    ),
+                     RaisedButton(
+                      child: Text("ScrollController 控制"),
+                      textColor: Colors.white70,
+                      color: Colors.blue[400],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "scrollController");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("ScrollController 监听"),
+                      textColor: Colors.white70,
+                      color: Colors.blue[400],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "scrollNotification");
                       },
                     ),
                   ],

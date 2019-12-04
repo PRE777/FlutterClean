@@ -34,7 +34,7 @@ class StackPositionedRoute extends StatelessWidget {
             child: Text("你猜我是谁"),
           ),
           Container(
-            color: Colors.red,
+            color: Color.fromARGB(130, 255, 0, 0),
             child: Text(
               "Hello world",
               style: TextStyle(color: Colors.white, fontSize: 20.0),

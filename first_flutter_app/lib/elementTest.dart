@@ -99,7 +99,7 @@ class ElementTextContent extends StatelessWidget {
                   RaisedButton(
                     color: Colors.blue,
                     textColor: Colors.white,
-                    child: Text("流式布局wrap flow"),
+                    child: Text("层叠布局Stack"),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                     onPressed: () {

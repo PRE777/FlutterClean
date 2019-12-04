@@ -36,8 +36,8 @@ import 'scrollWidget/widgets/listView.dart';
 import 'scrollWidget/widgets/gridView.dart';
 import 'scrollWidget/widgets/gridView1.dart';
 import 'scrollWidget/widgets/sliverScrollView.dart';
-
-
+import 'scrollWidget/widgets/scrollController.dart';
+import 'scrollWidget/widgets/scrollNotification.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -97,6 +97,9 @@ class MyApp extends StatelessWidget {
         "gridView":(context) => GridViewTestRoute(),
         "gridView1":(context) => DynamicGridViewTestRoute(),
         "customScrollView":(context) => CustomScrollViewTestRoute(),
+        "scrollController":(context) => ScrollControllerTestRoute(),
+        "scrollNotification":(context) => ScrollNotificationTestRoute(),
+        
       },
     );
     return materialApp;
