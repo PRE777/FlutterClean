@@ -146,6 +146,16 @@ class ElementTextContent extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, "scrollWidget");
                       },
+                    ), 
+                    RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text("功能类型组件"),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "functionalWidgets");
+                      },
                     ),
                   ],
                 ),

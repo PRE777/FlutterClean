@@ -39,8 +39,13 @@ import 'scrollWidget/widgets/sliverScrollView.dart';
 import 'scrollWidget/widgets/scrollController.dart';
 import 'scrollWidget/widgets/scrollNotification.dart';
 
-void main() => runApp(MyApp()); // 应用入口
+// 功能类组件
+import 'functionalWidgets/functionalEntrance.dart';
+import 'functionalWidgets/widgets/willPopScope.dart';
 
+
+
+void main() => runApp(MyApp()); // 应用入口
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -100,6 +105,9 @@ class MyApp extends StatelessWidget {
         "scrollController":(context) => ScrollControllerTestRoute(),
         "scrollNotification":(context) => ScrollNotificationTestRoute(),
         
+        // 功能类型组件
+        "functionalWidgets":(context) => FunctionalWidget(),
+        "willPopScope":(context) => WillPopScopeTestRoute(),
       },
     );
     return materialApp;
