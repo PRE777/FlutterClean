@@ -42,7 +42,7 @@ import 'scrollWidget/widgets/scrollNotification.dart';
 // 功能类组件
 import 'functionalWidgets/functionalEntrance.dart';
 import 'functionalWidgets/widgets/willPopScope.dart';
-
+import 'functionalWidgets/widgets/inheritedWidget.dart';
 
 
 void main() => runApp(MyApp()); // 应用入口
@@ -108,6 +108,8 @@ class MyApp extends StatelessWidget {
         // 功能类型组件
         "functionalWidgets":(context) => FunctionalWidget(),
         "willPopScope":(context) => WillPopScopeTestRoute(),
+        "shareDataRoute":(context) => ShareDataRoute(),
+
       },
     );
     return materialApp;

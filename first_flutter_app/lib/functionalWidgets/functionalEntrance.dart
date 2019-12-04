@@ -43,6 +43,17 @@ class FunctionalWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     onPressed: () {
+                      Navigator.pushNamed(context, "shareDataRoute");
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text(" "),
+                    textColor: Colors.white,
+                    color: Colors.blue[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    onPressed: () {
                       Navigator.pushNamed(context, "");
                     },
                   ),
