@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/elements/textFieldTest.dart';
 import 'package:flutter/material.dart'; //导入Material UI组件库
 // import 'package:english_words/english_words.dart';
 
@@ -43,7 +44,8 @@ import 'scrollWidget/widgets/scrollNotification.dart';
 import 'functionalWidgets/functionalEntrance.dart';
 import 'functionalWidgets/widgets/willPopScope.dart';
 import 'functionalWidgets/widgets/inheritedWidget.dart';
-
+import 'functionalWidgets/widgets/provider.dart';
+import 'functionalWidgets/widgets/changeTheme.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 class MyApp extends StatelessWidget {
@@ -58,8 +60,6 @@ class MyApp extends StatelessWidget {
         // primaryColor: Colors.black,// 主题颜色primaryColor 优先级高于主题样本primarySwatch
         primarySwatch: Colors.teal,
         // hintColor: Colors.red,
-
-        // hintColor: Colors.blue,
       ),
       //应用首页路由
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -109,7 +109,9 @@ class MyApp extends StatelessWidget {
         "functionalWidgets":(context) => FunctionalWidget(),
         "willPopScope":(context) => WillPopScopeTestRoute(),
         "shareDataRoute":(context) => ShareDataRoute(),
-
+        "provider":(context)  => ProviderTestRoute(),
+        "changeTheme":(context)  => ChangeThemeTestRoute(),
+        
       },
     );
     return materialApp;

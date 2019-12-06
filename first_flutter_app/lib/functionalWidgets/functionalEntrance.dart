@@ -47,7 +47,29 @@ class FunctionalWidget extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text(" "),
+                    child: Text("跨组件状态共享"),
+                    textColor: Colors.white,
+                    color: Colors.blue[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "provider");
+                    },
+                  ),
+                   RaisedButton(
+                    child: Text("路由换肤"),
+                    textColor: Colors.white,
+                    color: Colors.blue[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "changeTheme");
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text(""),
                     textColor: Colors.white,
                     color: Colors.blue[400],
                     shape: RoundedRectangleBorder(
