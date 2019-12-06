@@ -57,7 +57,7 @@ class FunctionalWidget extends StatelessWidget {
                       Navigator.pushNamed(context, "provider");
                     },
                   ),
-                   RaisedButton(
+                  RaisedButton(
                     child: Text("路由换肤"),
                     textColor: Colors.white,
                     color: Colors.blue[400],
@@ -66,6 +66,17 @@ class FunctionalWidget extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.pushNamed(context, "changeTheme");
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("异步UI更新"),
+                    textColor: Colors.white,
+                    color: Colors.blue[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "asyncUpdateUI");
                     },
                   ),
                   RaisedButton(

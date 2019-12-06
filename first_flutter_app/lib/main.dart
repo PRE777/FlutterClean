@@ -46,7 +46,7 @@ import 'functionalWidgets/widgets/willPopScope.dart';
 import 'functionalWidgets/widgets/inheritedWidget.dart';
 import 'functionalWidgets/widgets/provider.dart';
 import 'functionalWidgets/widgets/changeTheme.dart';
-
+import 'functionalWidgets/widgets/asyncUpdateUI.dart';
 void main() => runApp(MyApp()); // 应用入口
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
         "shareDataRoute":(context) => ShareDataRoute(),
         "provider":(context)  => ProviderTestRoute(),
         "changeTheme":(context)  => ChangeThemeTestRoute(),
-        
+        "asyncUpdateUI":(context) => AsyncUpdateUITestRoute(),
       },
     );
     return materialApp;
