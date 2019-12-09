@@ -46,6 +46,7 @@ class _SwitchAndCheckBoxTestRouteState
           activeColor: Colors.red,// 选中时的颜色
           tristate: true, // 默认是false ，true 时 checkBox 有三个值可选 true false null
           onChanged: (value){
+            print(value);
             setState(() {
               _checkboxSelected = value;
             });

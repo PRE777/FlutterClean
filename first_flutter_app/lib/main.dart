@@ -47,6 +47,8 @@ import 'functionalWidgets/widgets/inheritedWidget.dart';
 import 'functionalWidgets/widgets/provider.dart';
 import 'functionalWidgets/widgets/changeTheme.dart';
 import 'functionalWidgets/widgets/asyncUpdateUI.dart';
+import 'functionalWidgets/widgets/alertDialog.dart';
+
 void main() => runApp(MyApp()); // 应用入口
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -112,6 +114,7 @@ class MyApp extends StatelessWidget {
         "provider":(context)  => ProviderTestRoute(),
         "changeTheme":(context)  => ChangeThemeTestRoute(),
         "asyncUpdateUI":(context) => AsyncUpdateUITestRoute(),
+        "alert":(context) => AlertTestRoute(),
       },
     );
     return materialApp;

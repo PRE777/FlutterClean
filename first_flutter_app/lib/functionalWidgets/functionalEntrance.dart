@@ -80,14 +80,14 @@ class FunctionalWidget extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text(""),
+                    child: Text("弹出框alert"),
                     textColor: Colors.white,
                     color: Colors.blue[400],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "alert");
                     },
                   ),
                 ],
