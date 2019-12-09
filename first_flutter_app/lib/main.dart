@@ -1,5 +1,7 @@
 import 'package:first_flutter_app/elements/textFieldTest.dart';
 import 'package:flutter/material.dart'; //导入Material UI组件库
+import 'package:flutter_localizations/flutter_localizations.dart'; // 国际化
+import 'package:flutter/cupertino.dart';
 // import 'package:english_words/english_words.dart';
 
 import 'routerTest.dart';
@@ -50,6 +52,7 @@ import 'functionalWidgets/widgets/asyncUpdateUI.dart';
 import 'functionalWidgets/widgets/alertDialog.dart';
 
 void main() => runApp(MyApp()); // 应用入口
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -63,6 +66,18 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         // hintColor: Colors.red,
       ),
+      localizationsDelegates: [
+        //此处
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        DefaultCupertinoLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
+      supportedLocales: [
+        //此处
+        const Locale('zh', 'CH'),
+        const Locale('en', 'US'),
+      ],
       //应用首页路由
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 注册路由表
@@ -101,20 +116,20 @@ class MyApp extends StatelessWidget {
         "scrollWidget": (context) => ScrollWidget(),
         "singleChildScrollView": (context) => SingleChildScrollTestRoute(),
         "listView": (context) => ListViewTestRoute(),
-        "gridView":(context) => GridViewTestRoute(),
-        "gridView1":(context) => DynamicGridViewTestRoute(),
-        "customScrollView":(context) => CustomScrollViewTestRoute(),
-        "scrollController":(context) => ScrollControllerTestRoute(),
-        "scrollNotification":(context) => ScrollNotificationTestRoute(),
-        
+        "gridView": (context) => GridViewTestRoute(),
+        "gridView1": (context) => DynamicGridViewTestRoute(),
+        "customScrollView": (context) => CustomScrollViewTestRoute(),
+        "scrollController": (context) => ScrollControllerTestRoute(),
+        "scrollNotification": (context) => ScrollNotificationTestRoute(),
+
         // 功能类型组件
-        "functionalWidgets":(context) => FunctionalWidget(),
-        "willPopScope":(context) => WillPopScopeTestRoute(),
-        "shareDataRoute":(context) => ShareDataRoute(),
-        "provider":(context)  => ProviderTestRoute(),
-        "changeTheme":(context)  => ChangeThemeTestRoute(),
-        "asyncUpdateUI":(context) => AsyncUpdateUITestRoute(),
-        "alert":(context) => AlertTestRoute(),
+        "functionalWidgets": (context) => FunctionalWidget(),
+        "willPopScope": (context) => WillPopScopeTestRoute(),
+        "shareDataRoute": (context) => ShareDataRoute(),
+        "provider": (context) => ProviderTestRoute(),
+        "changeTheme": (context) => ChangeThemeTestRoute(),
+        "asyncUpdateUI": (context) => AsyncUpdateUITestRoute(),
+        "alert": (context) => AlertTestRoute(),
       },
     );
     return materialApp;

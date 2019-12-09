@@ -166,8 +166,11 @@ class AlertTestRoute extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      onPressed: () {
-                        _showDatePicker(context);
+                      onPressed: () async {
+                        var date = await _showDatePicker(context);
+                        if (date != null) {
+                          print(date);
+                        }
                       },
                     ),
                     RaisedButton(
@@ -563,8 +566,10 @@ Future<DateTime> _showDatePicker(context) {
   var date = new DateTime.now();
   return showDatePicker(
     context: context,
+    initialDatePickerMode: DatePickerMode.day,
     initialDate: date,
     firstDate: DateTime(date.year - 5),
+    locale: Locale("zh"),
     lastDate: date.add(
       // 未来30天可选
       Duration(days: 30),
