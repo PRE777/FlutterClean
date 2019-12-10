@@ -577,8 +577,9 @@ Future<DateTime> _showDatePicker(context) {
   );
 }
 
-// 日期选择
+// 日期选择 
 Future<DateTime> _showDatePicker1(context) {
+  Locale("zh");
   var date = DateTime.now();
   return showCupertinoModalPopup(
       context: context,
