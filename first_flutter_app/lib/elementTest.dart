@@ -157,6 +157,16 @@ class ElementTextContent extends StatelessWidget {
                         Navigator.pushNamed(context, "functionalWidgets");
                       },
                     ),
+                     RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text("事件处理与通知"),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "enventNotification");
+                      },
+                    ),
                   ],
                 ),
               ),

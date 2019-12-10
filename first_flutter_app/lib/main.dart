@@ -50,7 +50,9 @@ import 'functionalWidgets/widgets/provider.dart';
 import 'functionalWidgets/widgets/changeTheme.dart';
 import 'functionalWidgets/widgets/asyncUpdateUI.dart';
 import 'functionalWidgets/widgets/alertDialog.dart';
-
+// 事件处理与通知
+import 'eventNotification/entrance.dart';
+import 'eventNotification/widgets/originalEvent.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -130,6 +132,11 @@ class MyApp extends StatelessWidget {
         "changeTheme": (context) => ChangeThemeTestRoute(),
         "asyncUpdateUI": (context) => AsyncUpdateUITestRoute(),
         "alert": (context) => AlertTestRoute(),
+
+        // 事件处理与通知
+        "enventNotification":(context) => EnventNotificationRoute(),
+        "originalEvent":(context) => PointerEventTestRoute(),
+
       },
     );
     return materialApp;
