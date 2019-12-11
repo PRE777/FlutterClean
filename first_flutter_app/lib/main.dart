@@ -53,6 +53,9 @@ import 'functionalWidgets/widgets/alertDialog.dart';
 // 事件处理与通知
 import 'eventNotification/entrance.dart';
 import 'eventNotification/widgets/originalEvent.dart';
+import 'eventNotification/widgets/gesture.dart';
+import 'eventNotification/widgets/gestureArenaConflict.dart';
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -136,7 +139,10 @@ class MyApp extends StatelessWidget {
         // 事件处理与通知
         "enventNotification":(context) => EnventNotificationRoute(),
         "originalEvent":(context) => PointerEventTestRoute(),
+        "gestureTest":(context) => GestureTestRoute(),
+        "gestureArenaConflict":(context) => GestureArenaConflictRoute(),
 
+        
       },
     );
     return materialApp;

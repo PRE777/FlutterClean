@@ -33,6 +33,28 @@ class EnventNotificationRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
+                    child: Text("手势识别"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "gestureTest");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text("手势竞争与冲突"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "gestureArenaConflict");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: Text(""),
                     onPressed: () {
                       Navigator.pushNamed(context, "");
