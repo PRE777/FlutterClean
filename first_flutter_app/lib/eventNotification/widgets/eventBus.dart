@@ -32,10 +32,6 @@ class EventBusTestRoute extends StatelessWidget {
             flex: 1,
             child: Center(),
           ),
-          Expanded(
-            flex: 1,
-            child: Center(),
-          ),
         ],
       ),
     );

@@ -56,6 +56,7 @@ import 'eventNotification/widgets/originalEvent.dart';
 import 'eventNotification/widgets/gesture.dart';
 import 'eventNotification/widgets/gestureArenaConflict.dart';
 import 'eventNotification/widgets/eventBus.dart';
+import 'eventNotification/widgets/notification.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -143,6 +144,7 @@ class MyApp extends StatelessWidget {
         "gestureTest":(context) => GestureTestRoute(),
         "gestureArenaConflict":(context) => GestureArenaConflictRoute(),
         "eventBus":(context) => EventBusTestRoute(),
+        "notification":(context) => NotificationTestRoute(),
         
       },
     );
