@@ -146,7 +146,7 @@ class ElementTextContent extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, "scrollWidget");
                       },
-                    ), 
+                    ),
                     RaisedButton(
                       color: Colors.green[700],
                       textColor: Colors.white,
@@ -157,7 +157,7 @@ class ElementTextContent extends StatelessWidget {
                         Navigator.pushNamed(context, "functionalWidgets");
                       },
                     ),
-                     RaisedButton(
+                    RaisedButton(
                       color: Colors.green[700],
                       textColor: Colors.white,
                       child: Text("事件处理与通知"),
@@ -165,6 +165,16 @@ class ElementTextContent extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                       onPressed: () {
                         Navigator.pushNamed(context, "enventNotification");
+                      },
+                    ),
+                    RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text("动 画"),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "animationEntrance");
                       },
                     ),
                   ],

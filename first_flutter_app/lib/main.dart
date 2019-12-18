@@ -58,6 +58,11 @@ import 'eventNotification/widgets/gestureArenaConflict.dart';
 import 'eventNotification/widgets/eventBus.dart';
 import 'eventNotification/widgets/notification.dart';
 
+// 动画
+import 'animation/entrance.dart';
+import 'animation/widgets/AnimationBaseStructure.dart';
+import 'animation/widgets/AnimationStatusListen.dart';
+import 'animation/widgets/AnimationRoute.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -146,6 +151,11 @@ class MyApp extends StatelessWidget {
         "eventBus":(context) => EventBusTestRoute(),
         "notification":(context) => NotificationTestRoute(),
         
+        // 动画
+        "animationEntrance":(context) => AnimationEntranceRoute(),
+        "animationBaseStructure":(context) => AnimationTestRoute(),
+        "animationStatusListen":(context) => AnimationListenTestRoute(),
+        "animationRoute":(context) => CustomTransitionAnimationRoute(),
       },
     );
     return materialApp;
