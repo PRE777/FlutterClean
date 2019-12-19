@@ -21,18 +21,55 @@ class CustomTransitionAnimationRoute extends StatelessWidget {
               ),
               child: Text("渐隐渐入"),
               onPressed: () {
-                // Navigator.pushNamed(context, "animationStatusListen");
                 Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                        transitionDuration: Duration(milliseconds: 300),
-                        pageBuilder: (BuildContext context, Animation animation,
-                            Animation secondaryAnimation) {
-                          return new FadeTransition(
-                            opacity: animation,
-                            child: AnimationListenTestRoute(),
-                          );
-                        }));
+                  context,
+                  PageRouteBuilder(
+                    // transitionDuration: Duration(milliseconds: 300),
+                    pageBuilder: (BuildContext context, Animation animation,
+                        Animation secondaryAnimation) {
+                      return new FadeTransition(
+                        opacity: animation,
+                        child: AnimationListenTestRoute(),
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              textColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text("缩放动画"),
+              onPressed: () {
+                Navigator.push(context, PageRouteBuilder(pageBuilder:
+                    (BuildContext context, Animation animation,
+                        Animation secondaryAnimation) {
+                  return new ScaleTransition(
+                    scale: animation,
+                    child: AnimationListenTestRoute(),
+                  );
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              textColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text("旋转动画"),
+              onPressed: () {
+                Navigator.push(context, PageRouteBuilder(pageBuilder:
+                    (BuildContext context, Animation animation,
+                        Animation secondaryAnimation) {
+                  return new RotationTransition(
+                    turns: animation,
+                    child: AnimationListenTestRoute(),
+                  );
+                }));
               },
             ),
             RaisedButton(
@@ -69,22 +106,22 @@ class FadeRoute extends PageRoute {
   final WidgetBuilder builder;
 
   @override
+  final Duration transitionDuration;
+
+  @override
+  final bool opaque;
+
+  @override
+  final bool barrierDismissible;
+
+  @override
   final Color barrierColor;
 
   @override
   final String barrierLabel;
 
   @override
-  final bool barrierDismissible;
-
-  @override
   final bool maintainState;
-
-  @override
-  final Duration transitionDuration;
-
-  @override
-  final bool opaque;
 
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
@@ -107,3 +144,4 @@ class FadeRoute extends PageRoute {
     }
   }
 }
+

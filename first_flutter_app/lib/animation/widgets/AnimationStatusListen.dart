@@ -48,7 +48,7 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
   void initState() {
     super.initState();
     controller =
-        new AnimationController(duration: Duration(milliseconds: 500), vsync: this);
+        new AnimationController(duration: Duration(milliseconds: 300), vsync: this);
     // 使用弹性曲线
     animation = CurvedAnimation(parent: controller, curve: Curves.easeOut);
     // 图片宽高从0 -> 300
