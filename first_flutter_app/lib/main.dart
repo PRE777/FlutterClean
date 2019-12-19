@@ -63,6 +63,9 @@ import 'animation/entrance.dart';
 import 'animation/widgets/AnimationBaseStructure.dart';
 import 'animation/widgets/AnimationStatusListen.dart';
 import 'animation/widgets/AnimationRoute.dart';
+import 'animation/widgets/HeroAnimation.dart';
+
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -156,6 +159,7 @@ class MyApp extends StatelessWidget {
         "animationBaseStructure":(context) => AnimationTestRoute(),
         "animationStatusListen":(context) => AnimationListenTestRoute(),
         "animationRoute":(context) => CustomTransitionAnimationRoute(),
+        "heroAnimation":(context) => HeroAnimationRoute(),
       },
     );
     return materialApp;
