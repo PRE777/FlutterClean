@@ -66,6 +66,28 @@ class AnimationEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
+                    child: Text("stagger 交错动画"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "staggerAnimation");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(""),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: Text(""),
                     onPressed: () {
                       Navigator.pushNamed(context, "");
