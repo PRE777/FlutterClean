@@ -65,6 +65,9 @@ import 'animation/widgets/AnimationStatusListen.dart';
 import 'animation/widgets/AnimationRoute.dart';
 import 'animation/widgets/HeroAnimation.dart';
 import 'animation/widgets/staggerAnimation.dart';
+import 'animation/widgets/AnimatedSwitcher.dart';
+import 'animation/widgets/AnimationTransition.dart';
+
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -161,6 +164,9 @@ class MyApp extends StatelessWidget {
         "animationRoute":(context) => CustomTransitionAnimationRoute(),
         "heroAnimation":(context) => HeroAnimationRoute(),
         "staggerAnimation":(context) => StaggerAnimationRoute(),
+        "animatedSwitcher":(context) => AnimatedSwitcherRoute(),
+        "animationTransition":(context) => AnimatedTransitionRoute(),
+
       },
     );
     return materialApp;

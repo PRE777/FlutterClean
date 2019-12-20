@@ -77,9 +77,9 @@ class AnimationEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("切换动画（switcher）"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "animatedSwitcher");
                     },
                   ),
                   RaisedButton(
@@ -88,9 +88,9 @@ class AnimationEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("过渡动画"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "animationTransition");
                     },
                   ),
                 ],
