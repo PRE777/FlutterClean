@@ -68,6 +68,9 @@ import 'animation/widgets/staggerAnimation.dart';
 import 'animation/widgets/AnimatedSwitcher.dart';
 import 'animation/widgets/AnimationTransition.dart';
 
+// 自定义组件
+import 'customWidget/entrance.dart';
+import 'customWidget/widgets/gradientButton.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -167,6 +170,9 @@ class MyApp extends StatelessWidget {
         "animatedSwitcher":(context) => AnimatedSwitcherRoute(),
         "animationTransition":(context) => AnimatedTransitionRoute(),
 
+        // 自定义组件
+        "customWidgetEntrance":(context) => CustomWidgetEntranceRoute(),
+        "gradientButton":(context) => GradientButtonTestRoute(),
       },
     );
     return materialApp;
