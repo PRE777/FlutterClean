@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class GradientButtonTestRoute extends StatefulWidget {
-  @override
-  _GradientButtonTestRoute createState() => new _GradientButtonTestRoute();
-}
+// class GradientButtonTestRoute extends StatefulWidget {
+//   @override
+//   _GradientButtonTestRoute createState() => new _GradientButtonTestRoute();
+// }
 
-class _GradientButtonTestRoute extends State<GradientButtonTestRoute> {
+// class _GradientButtonTestRoute extends State<GradientButtonTestRoute> {
+class GradientButtonTestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +65,7 @@ class _GradientButtonTestRoute extends State<GradientButtonTestRoute> {
   }
 }
 
+// 自定制渐变button
 class GradientButton extends StatelessWidget {
   GradientButton({
     this.colors,

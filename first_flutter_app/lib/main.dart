@@ -71,7 +71,8 @@ import 'animation/widgets/AnimationTransition.dart';
 // 自定义组件
 import 'customWidget/entrance.dart';
 import 'customWidget/widgets/gradientButton.dart';
-
+import 'customWidget/widgets/turnBox.dart';
+import 'customWidget/widgets/customPaintCanvar.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -173,6 +174,8 @@ class MyApp extends StatelessWidget {
         // 自定义组件
         "customWidgetEntrance":(context) => CustomWidgetEntranceRoute(),
         "gradientButton":(context) => GradientButtonTestRoute(),
+        "turnBox":(context) => TurnBoxTextRoute(),
+        "customPaintCanvar":(context) => CustomPaintCanvarRoute(),
       },
     );
     return materialApp;

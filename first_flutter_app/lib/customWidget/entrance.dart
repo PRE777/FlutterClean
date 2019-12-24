@@ -33,9 +33,9 @@ class CustomWidgetEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("旋转组件(turnBox)"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "turnBox");
                     },
                   ),
                   RaisedButton(
@@ -44,9 +44,9 @@ class CustomWidgetEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("自绘组件"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "customPaintCanvar");
                     },
                   ),
                   RaisedButton(
