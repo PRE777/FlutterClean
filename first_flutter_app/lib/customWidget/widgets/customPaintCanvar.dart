@@ -8,7 +8,7 @@ class CustomPaintCanvarRoute extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " 自绘组件(CustomPaint与Canvas)",
+          "自绘组件(CustomPaint与Canvas)",
           style: TextStyle(fontSize: 17),
         ),
       ),
@@ -17,7 +17,7 @@ class CustomPaintCanvarRoute extends StatelessWidget {
   }
 }
 
-/**
+/*
  * size：当child为null时，代表默认绘制区域大小，如果有child则忽略此参数，画布尺寸则为child尺寸。
  * 如果有child但是想指定画布为特定大小，可以使用SizeBox包裹CustomPaint实现。
  */

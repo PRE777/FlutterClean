@@ -73,6 +73,8 @@ import 'customWidget/entrance.dart';
 import 'customWidget/widgets/gradientButton.dart';
 import 'customWidget/widgets/turnBox.dart';
 import 'customWidget/widgets/customPaintCanvar.dart';
+import 'customWidget/widgets/gradientCircularProgress.dart';
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -176,6 +178,8 @@ class MyApp extends StatelessWidget {
         "gradientButton":(context) => GradientButtonTestRoute(),
         "turnBox":(context) => TurnBoxTextRoute(),
         "customPaintCanvar":(context) => CustomPaintCanvarRoute(),
+        "gradientCircularProgress":(context) => GradientCircularProgressRoute(),
+        
       },
     );
     return materialApp;

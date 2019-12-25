@@ -55,31 +55,9 @@ class CustomWidgetEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("圆形背景渐变进度条"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
-                    },
-                  ),
-                  RaisedButton(
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(""),
-                    onPressed: () {
-                      Navigator.pushNamed(context, "");
-                    },
-                  ),
-                  RaisedButton(
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(""),
-                    onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "gradientCircularProgress");
                     },
                   ),
                   RaisedButton(
