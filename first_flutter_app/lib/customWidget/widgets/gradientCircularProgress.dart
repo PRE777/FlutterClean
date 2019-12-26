@@ -288,7 +288,6 @@ class _GradientCircularProgressPainter extends CustomPainter {
         colors: colors,
         stops: stops,
       ).createShader(rect);
-
       canvas.drawArc(rect, _start, _value, false, paint);
     }
   }

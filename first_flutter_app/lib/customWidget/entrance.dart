@@ -66,9 +66,9 @@ class CustomWidgetEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("自定义控件练习"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "customDemo");
                     },
                   ),
                 ],
