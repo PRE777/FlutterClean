@@ -60,7 +60,7 @@ class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
 }
 
 class _ChangeNotifierProviderState<T extends ChangeNotifier>
-    extends State<ChangeNotifierProvider<T>> {
+    extends State<ChangeNotifierProvider<T>> {  
   void update() {
     // 如果数据发生变化（model类调用了notifyListeners），重新构建InheritedProvider
     setState(() {});
