@@ -165,7 +165,7 @@ class CustomPathPaint extends CustomPainter {
     Path path1 = new Path();
     Rect rect = Rect.fromCircle(center: Offset(200.0, 200.0), radius: 60.0);
     path1.arcTo(rect, 0.0, 2 * pi * value, false);
-    paint.color = Colors.green;
+    paint.color = Colors.blue;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 5;
     paint.isAntiAlias = true;

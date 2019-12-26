@@ -76,10 +76,6 @@ import 'customWidget/widgets/customPaintCanvar.dart';
 import 'customWidget/widgets/gradientCircularProgress.dart';
 import 'customWidget/widgets/customDemo.dart';
 
-// 文件操作与网络请求
-import 'fileAndConnect/entrance.dart';
-import 'fileAndConnect/widgets/fileOperation.dart';
-
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -161,35 +157,31 @@ class MyApp extends StatelessWidget {
         "alert": (context) => AlertTestRoute(),
 
         // 事件处理与通知
-        "enventNotification": (context) => EnventNotificationRoute(),
-        "originalEvent": (context) => PointerEventTestRoute(),
-        "gestureTest": (context) => GestureTestRoute(),
-        "gestureArenaConflict": (context) => GestureArenaConflictRoute(),
-        "eventBus": (context) => EventBusTestRoute(),
-        "notification": (context) => NotificationTestRoute(),
-
+        "enventNotification":(context) => EnventNotificationRoute(),
+        "originalEvent":(context) => PointerEventTestRoute(),
+        "gestureTest":(context) => GestureTestRoute(),
+        "gestureArenaConflict":(context) => GestureArenaConflictRoute(),
+        "eventBus":(context) => EventBusTestRoute(),
+        "notification":(context) => NotificationTestRoute(),
+        
         // 动画
-        "animationEntrance": (context) => AnimationEntranceRoute(),
-        "animationBaseStructure": (context) => AnimationTestRoute(),
-        "animationStatusListen": (context) => AnimationListenTestRoute(),
-        "animationRoute": (context) => CustomTransitionAnimationRoute(),
-        "heroAnimation": (context) => HeroAnimationRoute(),
-        "staggerAnimation": (context) => StaggerAnimationRoute(),
-        "animatedSwitcher": (context) => AnimatedSwitcherRoute(),
-        "animationTransition": (context) => AnimatedTransitionRoute(),
+        "animationEntrance":(context) => AnimationEntranceRoute(),
+        "animationBaseStructure":(context) => AnimationTestRoute(),
+        "animationStatusListen":(context) => AnimationListenTestRoute(),
+        "animationRoute":(context) => CustomTransitionAnimationRoute(),
+        "heroAnimation":(context) => HeroAnimationRoute(),
+        "staggerAnimation":(context) => StaggerAnimationRoute(),
+        "animatedSwitcher":(context) => AnimatedSwitcherRoute(),
+        "animationTransition":(context) => AnimatedTransitionRoute(),
 
         // 自定义组件
-        "customWidgetEntrance": (context) => CustomWidgetEntranceRoute(),
-        "gradientButton": (context) => GradientButtonTestRoute(),
-        "turnBox": (context) => TurnBoxTextRoute(),
-        "customPaintCanvar": (context) => CustomPaintCanvarRoute(),
-        "gradientCircularProgress": (context) =>
-            GradientCircularProgressRoute(),
-        "customDemo": (context) => CustomDemoRoute(),
-
-        // 文件操作与网络请求
-        "fileConnectEntrance": (context) => FileAndConnectEntranceRoute(),
-        "fileOperation": (context) => FileOperationRoute(),
+        "customWidgetEntrance":(context) => CustomWidgetEntranceRoute(),
+        "gradientButton":(context) => GradientButtonTestRoute(),
+        "turnBox":(context) => TurnBoxTextRoute(),
+        "customPaintCanvar":(context) => CustomPaintCanvarRoute(),
+        "gradientCircularProgress":(context) => GradientCircularProgressRoute(),
+        "customDemo":(context) => CustomDemoRoute(),
+        
       },
     );
     return materialApp;
