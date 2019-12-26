@@ -32,7 +32,7 @@ class InheritedProvider<T> extends InheritedWidget {
 }
 
 // 该方法用于在Dart中获取模板类型
-Type _typeOf<T>() => T;
+// Type _typeOf<T>() => T;
 
 // 我们将要共享的状态放到一个<T extends ChangeNotifier> Model 类中，然后让它继承自ChangeNotifier
 class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
@@ -45,9 +45,11 @@ class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
   final T data;
   //定义一个便捷方法，方便子树中的widget获取共享数据
   static T of<T>(BuildContext context) {
-    final type = _typeOf<InheritedProvider<T>>();
-    final provider =
-        context.inheritFromWidgetOfExactType(type) as InheritedProvider<T>;
+    // final type = _typeOf<InheritedProvider<T>>();
+    final provider = context.dependOnInheritedWidgetOfExactType<
+        InheritedProvider<T>>(); // after v1.12.1.
+    // context.inheritFromWidgetOfExactType(type) as InheritedProvider<T>;
+
     return provider.data;
   }
 

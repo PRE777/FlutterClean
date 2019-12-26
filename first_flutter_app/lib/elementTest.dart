@@ -177,7 +177,7 @@ class ElementTextContent extends StatelessWidget {
                         Navigator.pushNamed(context, "animationEntrance");
                       },
                     ),
-                     RaisedButton(
+                    RaisedButton(
                       color: Colors.green[700],
                       textColor: Colors.white,
                       child: Text("自定义组件"),
@@ -185,6 +185,26 @@ class ElementTextContent extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                       onPressed: () {
                         Navigator.pushNamed(context, "customWidgetEntrance");
+                      },
+                    ),
+                    RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text("文件操作与网络请求"),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "fileConnectEntrance");
+                      },
+                    ),
+                    RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text(""),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "");
                       },
                     ),
                   ],
