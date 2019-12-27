@@ -2,7 +2,9 @@
 import 'dart:io';
 import 'dart:async';
 import 'package:flutter/material.dart';
-// import 'package:path_provider/path_provider.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/foundation.dart';
+
 
 class FileOperationRoute extends StatefulWidget {
   FileOperationRoute({Key key}) : super(key: key);
@@ -17,11 +19,11 @@ class _FileOperationRoute extends State<FileOperationRoute> {
   void initState() {
     super.initState();
     // 读取文件中数据
-    // _readCounter().then((int value){
-    //   setState(() {
-    //     _counter = value;
-    //   });
-    // });
+    _readCounter().then((int value){
+      setState(() {
+        _counter = value;
+      });
+    });
   }
 
   @override
@@ -57,28 +59,31 @@ class _FileOperationRoute extends State<FileOperationRoute> {
     );
   }
 
-  Future<Null>  _incrementCounter() async{
+  Future<Null> _incrementCounter() async {
     setState(() {
       _counter++;
     });
     // 将点击次数以字符串类型写到文件中
-  //  await (await _getLocalFile()).writeAsString("$_counter");
+    final path = await _getLocalFile();
+    await path.writeAsString("$_counter");
   }
+
   // 获取应用目录
-  Future<File> _getLocalFile() async{
-    // String dir = (await getApplicationDocumentsDirectory()).path;
-    // return new File("$dir/counter.txt");
+  Future<File> _getLocalFile() async {
+    final appDocDir = await getApplicationDocumentsDirectory();
+    String appDocPath = appDocDir.path;
+    return new File("$appDocPath/counter.txt");
   }
+
   // 读取
-  Future<int> _readCounter() async{
+  Future<int> _readCounter() async {
     try {
       File file = await _getLocalFile();
       // 读取点击次数（以字符串）
       String contents = await file.readAsString();
       return int.parse(contents);
-    } on FileOperationRoute{
+    } on FileOperationRoute {
       return 0;
     }
-    
   }
 }
