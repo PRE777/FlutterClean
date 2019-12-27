@@ -79,7 +79,8 @@ class ShareDataWidget extends InheritedWidget {
     // // 父widget发生变化时，子Widget会调用didChangeDependencies()方法和build()方法
     // return context.inheritFromWidgetOfExactType(ShareDataWidget);
     // 父widget发生变化时，子Widget不会调用didChangeDependencies()方法和build()方法
-    return context.ancestorInheritedElementForWidgetOfExactType(ShareDataWidget).widget;
+    // return context.ancestorInheritedElementForWidgetOfExactType(ShareDataWidget).widget;
+    return context.getElementForInheritedWidgetOfExactType<ShareDataWidget>().widget;
   }
 
   // 该回调决定当data发生变化时，是否通知子树中依赖data的子Widget
