@@ -79,6 +79,7 @@ import 'customWidget/widgets/customDemo.dart';
 // 文件操作与网络请求
 import 'fileAndConnect/entrance.dart';
 import 'fileAndConnect/widgets/fileOperation.dart';
+import 'fileAndConnect/widgets/httpClient.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -189,6 +190,7 @@ class MyApp extends StatelessWidget {
         // 文件操作与网络请求
         "fileAndConnectEntrance": (context) => FileAndConnectEntranceRoute(),
         "fileOperation": (context) => FileOperationRoute(),
+        "httpClient":(context) => HttpClientTextRoute(),
       },
     );
     return materialApp;
