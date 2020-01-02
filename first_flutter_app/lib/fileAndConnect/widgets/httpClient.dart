@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 
+
 class HttpClientTextRoute extends StatefulWidget {
   @override
   _HttpClientTextRouteState createState() => new _HttpClientTextRouteState();
@@ -121,7 +122,7 @@ Future<Map<String, dynamic>> sendHttpRequest(
   HttpClientRequest request;
   Uri uri;
 
-  if (bool.fromEnvironment("dart.vm.product") == false) {
+  if (bool.fromEnvironment("dart.vm.product") == true) {
     // Debug 模式下（非生产模式），抓包时将true改为false
     // charles 抓包需要，10.3.11.49 为本机IP
     httpClient.findProxy = (url) {

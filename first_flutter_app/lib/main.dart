@@ -80,6 +80,7 @@ import 'customWidget/widgets/customDemo.dart';
 import 'fileAndConnect/entrance.dart';
 import 'fileAndConnect/widgets/fileOperation.dart';
 import 'fileAndConnect/widgets/httpClient.dart';
+import 'fileAndConnect/widgets/dio_Http.dart';
 
 void main() => runApp(MyApp()); // 应用入口
 
@@ -191,6 +192,7 @@ class MyApp extends StatelessWidget {
         "fileAndConnectEntrance": (context) => FileAndConnectEntranceRoute(),
         "fileOperation": (context) => FileOperationRoute(),
         "httpClient":(context) => HttpClientTextRoute(),
+        "dio_httpRequest":(context) => DioHttpTestRoute(),
       },
     );
     return materialApp;
