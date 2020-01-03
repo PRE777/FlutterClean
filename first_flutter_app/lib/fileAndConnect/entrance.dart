@@ -55,9 +55,9 @@ class FileAndConnectEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("分块下载"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "downloadWithChunks");
                     },
                   ),
                   RaisedButton(
