@@ -66,6 +66,39 @@ class FileAndConnectEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
+                    child: Text("Websocket"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "webSocket");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(""),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(""),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "");
+                    },
+                  ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: Text(""),
                     onPressed: () {
                       Navigator.pushNamed(context, "");
