@@ -77,9 +77,9 @@ class FileAndConnectEntranceRoute extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(""),
+                    child: Text("json数据序列化"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "");
+                      Navigator.pushNamed(context, "json_Model");
                     },
                   ),
                   RaisedButton(

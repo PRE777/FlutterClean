@@ -83,6 +83,7 @@ import 'fileAndConnect/widgets/httpClient.dart';
 import 'fileAndConnect/widgets/dio_Http.dart';
 import 'fileAndConnect/widgets/downloadWithChunks.dart';
 import 'fileAndConnect/widgets/webScoket.dart';
+import 'fileAndConnect/widgets/jsonModel.dart';
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -195,7 +196,8 @@ class MyApp extends StatelessWidget {
         "httpClient":(context) => HttpClientTextRoute(),
         "dio_httpRequest":(context) => DioHttpTestRoute(),
         "downloadWithChunks":(context) => DownLoadWithChunks(),
-        "webSocket":(context) => WebSocketTestRoute()
+        "webSocket":(context) => WebSocketTestRoute(),
+        "json_Model":(context) =>JsonModelTestRoute(),
       },
     );
     return materialApp;
