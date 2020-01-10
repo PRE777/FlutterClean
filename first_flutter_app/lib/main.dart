@@ -84,6 +84,11 @@ import 'fileAndConnect/widgets/dio_Http.dart';
 import 'fileAndConnect/widgets/downloadWithChunks.dart';
 import 'fileAndConnect/widgets/webScoket.dart';
 import 'fileAndConnect/widgets/jsonModel.dart';
+
+// 包与插件
+import 'package/entrance.dart';
+import 'package/widgets/flutterPackage.dart';
+
 void main() => runApp(MyApp()); // 应用入口
 
 class MyApp extends StatelessWidget {
@@ -198,6 +203,10 @@ class MyApp extends StatelessWidget {
         "downloadWithChunks":(context) => DownLoadWithChunks(),
         "webSocket":(context) => WebSocketTestRoute(),
         "json_Model":(context) =>JsonModelTestRoute(),
+
+        // 包与插件
+        "packageEntrance":(context) => PackageEntranceRoute(),
+        "batterylevel":(context) => BatterylevelTestRoute(),
       },
     );
     return materialApp;

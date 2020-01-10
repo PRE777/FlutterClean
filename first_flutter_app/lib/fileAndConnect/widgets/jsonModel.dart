@@ -52,6 +52,11 @@ class _JsonModelTestRouteState extends State<JsonModelTestRoute> {
                       print("${jsonData['email']}");
                     },
             ),
+            Text("根据返回数据创建xx.json，存放在根目录下的jsons"),
+            Text("在lib下创建models文件夹"),
+            Text("在终端执行：flutter packages pub run json_model"),
+            Text("结束之后，会在吗models中生成xx.dart,xx.g.dart文件"),
+            Text("在需要使用模型的地方，引入index.dart"),
           ],
         ),
       ),

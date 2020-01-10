@@ -197,6 +197,16 @@ class ElementTextContent extends StatelessWidget {
                         Navigator.pushNamed(context, "fileAndConnectEntrance");
                       },
                     ),
+                    RaisedButton(
+                      color: Colors.green[700],
+                      textColor: Colors.white,
+                      child: Text("包与插件"),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "packageEntrance");
+                      },
+                    ),
                   ],
                 ),
               ),
