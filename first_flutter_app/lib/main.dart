@@ -198,15 +198,15 @@ class MyApp extends StatelessWidget {
         // 文件操作与网络请求
         "fileAndConnectEntrance": (context) => FileAndConnectEntranceRoute(),
         "fileOperation": (context) => FileOperationRoute(),
-        "httpClient":(context) => HttpClientTextRoute(),
-        "dio_httpRequest":(context) => DioHttpTestRoute(),
-        "downloadWithChunks":(context) => DownLoadWithChunks(),
-        "webSocket":(context) => WebSocketTestRoute(),
-        "json_Model":(context) =>JsonModelTestRoute(),
+        "httpClient": (context) => HttpClientTextRoute(),
+        "dio_httpRequest": (context) => DioHttpTestRoute(),
+        "downloadWithChunks": (context) => DownLoadWithChunks(),
+        "webSocket": (context) => WebSocketTestRoute(),
+        "json_Model": (context) => JsonModelTestRoute(),
 
         // 包与插件
-        "packageEntrance":(context) => PackageEntranceRoute(),
-        "batterylevel":(context) => BatterylevelTestRoute(),
+        "packageEntrance": (context) => PackageEntranceRoute(),
+        "batterylevel": (context) => BatterylevelTestRoute(),
       },
     );
     return materialApp;
@@ -244,6 +244,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text("flutter1.9之后，iOS项目默认为swift,"),
+            Text("终端中执行 'flutter create -i objc + 工程名' ，创建oc"),
             Text(
               'You have pushed the button this many times:',
             ),
