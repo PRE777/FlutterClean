@@ -91,6 +91,7 @@ import 'fileAndConnect/widgets/jsonModel.dart';
 import 'package/entrance.dart';
 import 'package/widgets/flutterPackage.dart';
 import 'package/widgets/cameraRoute.dart';
+import 'package/widgets/platformView.dart';
 
 List<CameraDescription> cameras;
 void main() async {
@@ -220,6 +221,7 @@ class MyApp extends StatelessWidget {
         "packageEntrance": (context) => PackageEntranceRoute(),
         "batterylevel": (context) => BatterylevelTestRoute(),
         "cameraRoute": (context) => CameraExampleHome(),
+        "platformView": (context) => PlatformViewRoute(),
       },
     );
     return materialApp;
