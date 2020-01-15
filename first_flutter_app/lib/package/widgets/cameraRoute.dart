@@ -39,6 +39,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   VideoPlayerController videoController;
   VoidCallback videoPlayerListener;
   bool enableAudio = false;
+
   @override
   void initState() {
     super.initState();
@@ -54,7 +55,6 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // super.didChangeAppLifecycleState(state);
     // 如果app不再前台
     if (state == AppLifecycleState.inactive) {
       controller.dispose();
@@ -75,7 +75,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
         title: Text("相机示例"),
       ),
       body: Padding(
-        padding: EdgeInsets.only(bottom: 20),
+        padding: EdgeInsets.only(bottom: 0),
         child: Column(
           children: <Widget>[
             Expanded(
@@ -105,7 +105,6 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Text("data"),
                   _cameraTogglesRowWidget(),
                   _thumbnailWidget(),
                 ],
@@ -121,10 +120,10 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   Widget _cameraPreviewWidget() {
     if (controller == null || !controller.value.isInitialized) {
       return const Text(
-        "选择一个摄像头",
+        '选择一个摄像头',
         style: TextStyle(
           color: Colors.white,
-          fontSize: 24,
+          fontSize: 24.0,
           fontWeight: FontWeight.w900,
         ),
       );
@@ -135,7 +134,62 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       );
     }
   }
-  
+
+// 开启或关闭录音
+  Widget _toggleAudioWidget() {
+    return Padding(
+      padding: EdgeInsets.only(left: 25),
+      child: Row(
+        children: <Widget>[
+          Text("开启录音:"),
+          Switch(
+            value: enableAudio,
+            onChanged: (bool value) {
+              enableAudio = value;
+              if (controller != null) {
+                onNewCameraSelected(controller.description);
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+// 显示已拍摄的图片/视频缩略图。
+  Widget _thumbnailWidget() {
+    return Expanded(
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            videoController == null && imagePath == null
+                ? Container()
+                : SizedBox(
+                    child: (videoController == null)
+                        ? Image.file(File(imagePath))
+                        : Container(
+                            child: Center(
+                              child: AspectRatio(
+                                  aspectRatio:
+                                      videoController.value.size != null
+                                          ? videoController.value.aspectRatio
+                                          : 1.0,
+                                  child: VideoPlayer(videoController)),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.pink),
+                            ),
+                          ),
+                    width: 64.0,
+                    height: 64.0,
+                  ),
+          ],
+        ),
+      ),
+    );
+  }
 
   // 相机工具栏
   Widget _captureControlRowWidget() {
@@ -174,30 +228,10 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     );
   }
 
-  // 开启或关闭录音
-  Widget _toggleAudioWidget() {
-    return Padding(
-      padding: EdgeInsets.only(left: 25),
-      child: Row(
-        children: <Widget>[
-          Text("开启录音:"),
-          Switch(
-            value: enableAudio,
-            onChanged: (bool value) {
-              enableAudio = value;
-              if (controller != null) {
-                onNewCameraSelected(controller.description);
-              }
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
   //展示所有摄像头(前、后)
   Widget _cameraTogglesRowWidget() {
     final List<Widget> toggles = <Widget>[];
+
     if (cameras.isEmpty) {
       return const Text("未检测到摄像头");
     } else {
@@ -215,44 +249,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
         ));
       }
     }
-    return Row(
-      children: toggles,
-    );
-  }
-
-  // 显示已拍摄的图片/视频缩略图。
-  Widget _thumbnailWidget() {
-    return Expanded(
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            (videoController == null && videoPath == null)
-                ? Container()
-                : SizedBox(
-                    child: (videoController == null)
-                        ? Image.file(File(imagePath))
-                        : Container(
-                            child: Center(
-                              child: AspectRatio(
-                                aspectRatio: videoController.value.size != null
-                                    ? videoController.value.aspectRatio
-                                    : 1.0,
-                                child: VideoPlayer(videoController),
-                              ),
-                            ),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.pink),
-                            ),
-                            width: 64.0,
-                            height: 64.0,
-                          ),
-                  ),
-          ],
-        ),
-      ),
-    );
+    return Row(children: toggles);
   }
 
   String timestamp() => DateTime.now().millisecondsSinceEpoch.toString();
@@ -261,13 +258,16 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(message)));
   }
 
-  // 摄像头选中回���
+  // 摄像头选中回调
   void onNewCameraSelected(CameraDescription cameraDescription) async {
     if (controller != null) {
       await controller.dispose();
     }
-    controller = CameraController(cameraDescription, ResolutionPreset.high,
-        enableAudio: enableAudio);
+    controller = CameraController(
+      cameraDescription,
+      ResolutionPreset.high,
+      enableAudio: enableAudio,
+    );
     controller.addListener(() {
       if (mounted) setState(() {});
       if (controller.value.hasError) {
@@ -390,10 +390,12 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     final String dirPath = '${extDir.path}/Pictures/flutter_test';
     await Directory(dirPath).create(recursive: true);
     final String filePath = '$dirPath/${timestamp()}.jpg';
-    if (controller.value.isRecordingVideo) {
+
+    if (controller.value.isTakingPicture) {
       // 如果正在录制，则直接返回
       return null;
     }
+
     try {
       await controller.takePicture(filePath);
     } on CameraException catch (e) {
