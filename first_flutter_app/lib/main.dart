@@ -2,6 +2,8 @@ import 'package:first_flutter_app/elements/textFieldTest.dart';
 import 'package:flutter/material.dart'; //导入Material UI组件库
 import 'package:flutter_localizations/flutter_localizations.dart'; // 国际化
 import 'package:flutter/cupertino.dart';
+import 'package:camera/camera.dart';
+
 // import 'package:english_words/english_words.dart';
 
 import 'routerTest.dart';
@@ -88,8 +90,18 @@ import 'fileAndConnect/widgets/jsonModel.dart';
 // 包与插件
 import 'package/entrance.dart';
 import 'package/widgets/flutterPackage.dart';
+import 'package/widgets/cameraRoute.dart';
 
-void main() => runApp(MyApp()); // 应用入口
+List<CameraDescription> cameras;
+void main() async {
+  // 获取可用摄像头列表，cameras为全局变量
+  runApp(MyApp()); // 应用入口
+  try {
+    cameras = await availableCameras();
+  } catch (e) {
+    print(e.toString());
+  }
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -207,6 +219,7 @@ class MyApp extends StatelessWidget {
         // 包与插件
         "packageEntrance": (context) => PackageEntranceRoute(),
         "batterylevel": (context) => BatterylevelTestRoute(),
+        "cameraRoute": (context) => CameraExampleHome(),
       },
     );
     return materialApp;
